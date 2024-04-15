@@ -17,7 +17,7 @@ In the United States, the S&P 500s has climbed to record highs on 22 separate da
 
 Accurately predicting market behaviour could provide a competitive edge, prompting exploration of machine learning techniques.
 
-Previous studies have explored traditional (fundamental and technical analysis) and machine-learning based approaches for stock market prediction, with mixed success. Stock market prediction is recognized as one of the most relevant, but highly challenging takss in fiancnial research. [Add something in here on EMH]
+Previous studies have explored traditional (fundamental and technical analysis) and machine-learning based approaches for stock market prediction, with mixed success. Stock market prediction is recognized as one of the most relevant, but highly challenging takss in fiancnial research.
 
 This project aims to leverage recurrent neural networks (RNNs), specifically LSTM and GRU frameworks, to develop a model for stock price predictions. Historical stock price data will be collected, preprocessed and used to train and evaluate LSTM and RNN models.
 
