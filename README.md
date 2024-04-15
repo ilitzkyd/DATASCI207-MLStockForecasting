@@ -32,9 +32,7 @@ Restricted to one stock for model development, but can easily extend sample.
 With a train-dev split of 70%/30%, training set includes data to approximately the end of 2020. 
 Remaining data used to create validation and test samples. 
 
-<p align="center">
-  <img src="image_1.JPG" alt="MSFT Stock Price">
-</p>
+![MSFT Stock Price](image_1.JPG)  
 
 ## Modeling
 
@@ -42,9 +40,8 @@ Remaining data used to create validation and test samples.
 
 We defined very simple baseline model before employing machine learning techniques, a persistence model.  
 The persistence model simply predicts the next value in the sequence to be the same as the last value observed.
-<p align="center">
-  <img src="image_2.JPG" alt="MSFT Stock Price">
-</p>
+
+![Base Model](image_2.JPG)  
 
 ### Experiments
 
