@@ -7,30 +7,28 @@ Daniel Florencio
 David Ilitzky  
 Tahlee Stone  
 
-These document is a very brief overview of the project. Please check the notebook for the full work.
+These document provides a very brief overview of the project. Please check the notebook for the full analysis.
 
 ## Motivation
 
-Interest in stock market participation has surged in recent years, with both retail and institutional investors seeking higher risk-adjusted returns than the market.
+Interest in stock market participation has surged in recent years with both retail and institutional investors seeking higher risk-adjusted returns than the market. This has been in line with record, inflation-adjusted highs observed in the US S&P 500 in 2022/24. 
 
-In the United States, the S&P 500s has climbed to record highs on 22 separate days in 2024, even after adjusting for inflation, further adding to interest in equity markets.
+Accurately predicting market behaviour could therefore provide a competitive edge, inform investment decisions and support risk management strategies. This prompts appetite for examining machine learning techniques for stock price prediction.
 
-Accurately predicting market behaviour could provide a competitive edge, prompting exploration of machine learning techniques.
+This project aims to leverage recurrent neural networks (RNNs), specifically LSTM and GRU frameworks, to develop a model for stock price predictions. These models are commonly used in the stock price prediction literature for their ability to handle recurrent time series data (sequential data with long-term depdencies over time) and because they address the Vanishing Gradient Problem (VGP) that is an issue for standard RNN models. Historical stock price data will be collected, preprocessed and used to train and evaluate LSTM and RNN models.
 
-Previous studies have explored traditional (fundamental and technical analysis) and machine-learning based approaches for stock market prediction, with mixed success. Stock market prediction is recognized as one of the most relevant, but highly challenging takss in fiancnial research.
+Previous studies have explored traditional (fundamental and technical analysis) and machine-learning based approaches for stock market prediction, with mixed success. Stock market prediction is recognized as one of the most relevant, but highly challenging tasks in financial research. The efficient market hypothesis (EMH) makes this a contentious space. The EMH states that price already reflects all available information and the best forecast of stock price is a random walk model (previous day's price plus noise). Over time, there has been challenges to the EMH (e.g. behavioural biases (speculative, irrational trading) and information asymmetry (insiders trading on privileged information)), but as a base case we will consider if our modelling techniques perform at least as well as a proxy for a random walk model. 
 
-This project aims to leverage recurrent neural networks (RNNs), specifically LSTM and GRU frameworks, to develop a model for stock price predictions. Historical stock price data will be collected, preprocessed and used to train and evaluate LSTM and RNN models.
+Below an overview on each section of our analysis is provided.
 
 ## Data
 
 Historical stock price data are obtained from the `Yahoo! Finance API`.  Analysis uses Microsoft Corporation `MSFT` daily closing prices using ten years’ of data `01 Mar 2014 to 31 Mar 2024`.  
 
-Yahoo! Finance API provides historic data for stocks, EFTs and market indices globally. 
+Yahoo! Finance API provides historic data for stocks, EFTs and market indices globally.  Our analysis was restricted to one stock for model development in the first instance, but can easily be extended to include other stocks in the sample later. 
 
-Restricted to one stock for model development, but can easily extend sample. 
-
-With a train-dev split of 70%/30%, training set includes data to approximately the end of 2020. 
-Remaining data used to create validation and test samples. 
+The train-dev split was selected to be 70%/30%. This ensured that the training set includes sufficient time periods in the sample, out to approximately the end of 2020, which covers both upswings and downswings in the market. 
+Remaining data was used to create validation and test samples. 
 
 ![MSFT Stock Price](Image_1.JPG)  
 
@@ -38,7 +36,7 @@ Remaining data used to create validation and test samples.
 
 ### Base Model  
 
-We defined very simple baseline model before employing machine learning techniques, a persistence model.  
+We defined a very simple baseline model before employing machine learning techniques, a 'persistence' model that is a proxy to test for EMH. 
 The persistence model simply predicts the next value in the sequence to be the same as the last value observed.
 
 ![Base Model](Image_2.JPG)  
@@ -82,9 +80,9 @@ The table below shows the `Experiment Configurations`.
 
 From the final table below we can draw several conclusions:  
 
-**Baseline Performance**: None of the models was able to beat the base model.  
+**Baseline Performance**: None of the models were able to beat the base model.  
 
-**Optimizers Impact**: The choice of optimizer significantly affects model performance. Models trained with the `Adam` optimizer performed better compared to those trained with `SGD`.  
+**Optimizers Impact**: The choice of optimizer significantly affects model performance. Models trained with the `Adam` optimizer performed better compared to those trained with `SGD`, likely due to the ability of Adam to be able to update the learning rate dynamically.
 
 **Batch Size Influence**: Across all the experiments `small (32)`  batch sizes performd better than `large (64)` batch sizes, holding everything else constant.  
 
