@@ -80,7 +80,7 @@ The table below shows the `Experiment Configurations`.
 
 ## Conclusions
 
-From the final table bewlow we can draw several conclusions:  
+From the final table below we can draw several conclusions:  
 
 **Baseline Performance**: None of the models was able to beat the base model.  
 
@@ -97,7 +97,6 @@ From the final table bewlow we can draw several conclusions:
 **Overfitting**: There are signs of overfitting, especially noticeable in models with significantly lower training RMSE compared to validation and test RMSE. This suggests that these models might be fitting too closely to the training data and performing poorly on unseen data.  
 
 **Recommendations**: Based on the results, it seems that models trained with the `Adam optimizer` and a `learning rate of 0.001` generally perform better. Additionally, careful consideration should be given to batch size and sequence length.  
-
 
 In summary, while LSTM and GRU models show promise for stock price prediction, further optimization and fine-tuning of hyperparameters are necessary to enhance predictive accuracy.  
 
