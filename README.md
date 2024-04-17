@@ -100,25 +100,25 @@ In summary, while LSTM and GRU models show promise for stock price prediction, f
 
 Additionally, it would be beneficial to explore other features to enhance the models, such as including external indexes, company specific metrics, and macroeconomic variables.  
 
-| Model Type | Optimizer | Batch Size | Learning Rate | Sequence Length | Train RMSE   | Validation RMSE | Test RMSE |
-|------------|-----------|------------|---------------|-----------------|--------------|-----------------|-----------|
-| BASELINE   | -         | -          | -             | -               | 2.25         | 5.28            | **4.79** |
-| LSTM       | Adam      | 32         | 0.001         | 60              | 2.31         | 5.81            | **5.17**  |
-| LSTM       | Adam      | 64         | 0.001         | 60              | 2.37         | 6.29            | 7.81      |
-| LSTM       | Adam      | 32         | 0.01          | 60              | 5.15         | 5.72            | 9.65      |
-| LSTM       | Adam      | 32         | 0.001         | 90              | 3.17         | 7.34            | 5.86      |
-| LSTM       | SGD       | 32         | 0.001         | 60              | 4.76         | 13.93           | 23.57     |
-| LSTM       | SGD       | 64         | 0.001         | 60              | 29.00        | 84.67           | 113.78    |
-| LSTM       | SGD       | 32         | 0.01          | 60              | 4.19         | 11.51           | 14.62     |
-| LSTM       | SGD       | 32         | 0.001         | 90              | 5.05         | 14.86           | 31.54     |
-| GRU        | Adam      | 32         | 0.001         | 60              | 2.52         | 6.27            | 5.33      |
-| GRU        | Adam      | 64         | 0.001         | 60              | 2.86         | 6.58            | 5.69      |
-| GRU        | Adam      | 32         | 0.01          | 60              | 2.67         | 6.16            | 15.41     |
-| GRU        | Adam      | 32         | 0.001         | 90              | 3.18         | 6.93            | 5.61      |
-| GRU        | SGD       | 32         | 0.001         | 60              | 20.70        | 60.12           | 78.89     |
-| GRU        | SGD       | 64         | 0.001         | 60              | 32.02        | 93.31           | 120.70    |
-| GRU        | SGD       | 32         | 0.01          | 60              | 2.84         | 7.55            | 8.23      |
-| GRU        | SGD       | 32         | 0.001         | 90              | 7.80         | 20.46           | 30.43     |
+| Model Type | Optimizer | Batch Size | Learning Rate | Sequence Length | # Parameters | Train RMSE | Validation RMSE | Test RMSE |
+|------------|-----------|------------|---------------|-----------------|--------------|------------|-----------------|-----------|
+| BASELINE   | -         | -          | -             | -               | -            | 2.25       | 5.28            | **4.79**  |
+| LSTM       | Adam      | 32         | 0.001         | 60              | 31901        | 2.31       | 5.71            | 5.90      |
+| LSTM       | Adam      | 64         | 0.001         | 60              | 31901        | 2.49       | 6.48            | 6.93      |
+| LSTM       | Adam      | 32         | 0.01          | 60              | 31901        | 4.43       | 5.76            | 5.38      |
+| LSTM       | Adam      | 32         | 0.001         | 90              | 31901        | 3.15       | 7.34            | 5.84      |
+| LSTM       | SGD       | 32         | 0.001         | 60              | 31901        | 5.05       | 14.58           | 24.93     |
+| LSTM       | SGD       | 64         | 0.001         | 60              | 31901        | 20.83      | 65.50           | 92.94     |
+| LSTM       | SGD       | 32         | 0.01          | 60              | 31901        | 4.44       | 15.44           | 32.35     |
+| LSTM       | SGD       | 32         | 0.001         | 90              | 31901        | 5.17       | 16.15           | 35.06     |
+| GRU        | Adam      | 32         | 0.001         | 60              | 24551        | 2.54       | 6.37            | 5.46      |
+| GRU        | Adam      | 64         | 0.001         | 60              | 24551        | 3.68       | 7.68            | 6.68      |
+| GRU        | Adam      | 32         | 0.01          | 60              | 24551        | 2.38       | 6.41            | 15.97     |
+| GRU        | Adam      | 32         | 0.001         | 90              | 24551        | 2.77       | 6.35            | 5.18      |
+| GRU        | SGD       | 32         | 0.001         | 60              | 24551        | 13.05      | 37.69           | 50.47     |
+| GRU        | SGD       | 64         | 0.001         | 60              | 24551        | 33.68      | 98.16           | 127.05    |
+| GRU        | SGD       | 32         | 0.01          | 60              | 24551        | 2.83       | 7.54            | 8.19      |
+| GRU        | SGD       | 32         | 0.001         | 90              | 24551        | 4.82       | 11.82           | 17.50     |
 
 ## Contributions
 
